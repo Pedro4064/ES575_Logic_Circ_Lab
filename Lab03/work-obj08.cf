@@ -1,0 +1,31 @@
+v 4
+file . "mod_k_counter_cout.vhd" "69fca06659755abb4b5b087ab82dc66c7e804851" "20230416211951.928":
+  entity mod_k_counter_cout at 1( 0) + 0 on 411;
+  architecture arch of mod_k_counter_cout at 20( 440) + 0 on 412;
+file . "tb_module_k_counter.vhd" "06e866266f407ed650abda97a3bb8cab01cf9b2d" "20230416154240.698":
+  entity tb_module_k_counter at 1( 0) + 0 on 329;
+  architecture arch of tb_module_k_counter at 8( 126) + 0 on 330;
+file . "tb_counter.vhd" "3c7969cf14ca56ea8eb5d615f5c2b64b059315de" "20230416154240.696":
+  entity tb_counter at 1( 0) + 0 on 327;
+  architecture arch of tb_counter at 12( 208) + 0 on 328;
+file . "tb_contador_nbits.vhd" "2df147251848e115bd5615d76908d80bbd3d8650" "20230416154240.694":
+  entity tb_contador_nbits at 1( 0) + 0 on 325;
+  architecture arch of tb_contador_nbits at 13( 249) + 0 on 326;
+file . "sevenseg.vhd" "60794ccb24467fd6ce916effc3d9fac567a17d77" "20230416154240.692":
+  entity sevenseg at 1( 0) + 0 on 323;
+  architecture arch of sevenseg at 12( 190) + 0 on 324;
+file . "module_k_counter.vhd" "bc2175c75efc7ab687ed46d1890818f92e6eefa5" "20230416154240.690":
+  entity module_k_counter at 1( 0) + 0 on 321;
+  architecture arch of module_k_counter at 17( 293) + 0 on 322;
+file . "counter.vhd" "544baf4e8efb7ad05aff3ba14392d43b6fb1bfab" "20230416154240.688":
+  entity counter at 1( 0) + 0 on 319;
+  architecture arch of counter at 17( 250) + 0 on 320;
+file . "contador_nbits.vhd" "58ac88c0b6d75b4367f3f19ccf4d50f6da8a75be" "20230416154240.682":
+  entity contador_nbits at 1( 0) + 0 on 317;
+  architecture arch of contador_nbits at 17( 236) + 0 on 318;
+file . "FF_T.vhd" "f6d5f3b0943d4093f5813f7f2bc62299d838ec3d" "20230416154240.680":
+  entity ff_t at 1( 0) + 0 on 315;
+  architecture arch of ff_t at 11( 146) + 0 on 316;
+file . "tb_mod_k_counter_cout.vhd" "a829387cb59b63aec3add4c2aa329765b48b099b" "20230416212040.783":
+  entity tb_mod_k_counter_cout at 1( 0) + 0 on 415;
+  architecture arch of tb_mod_k_counter_cout at 9( 154) + 0 on 416;
