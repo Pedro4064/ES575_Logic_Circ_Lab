@@ -11,7 +11,7 @@ entity mod_k_counter_cout is
 
 
 	port(
-		clock, reset_n: in STD_LOGIC := '0';
+		clock, reset_n, enable: in STD_LOGIC := '0';
         full_cycle: out STD_LOGIC := '0';
 		Q: out STD_LOGIC_VECTOR(port_width downto 0) := (others => '0')
 	);
@@ -31,7 +31,7 @@ architecture arch of mod_k_counter_cout is
 				value :=(others => '0');
                 reached_full_cycle := false;
 
-			elsif (rising_edge(clock)) then
+			elsif (rising_edge(clock) and enable = '1') then
                 -- First check if there has been a clock cycle since reached full cycle, if yes set bit to zero
                 if (reached_full_cycle) then 
                     full_cycle <= '0';
