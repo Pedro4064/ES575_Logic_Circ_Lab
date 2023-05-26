@@ -26,15 +26,17 @@ BEGIN
 -- PORT MAPPING BETWEEN SIGNALS AND DEVICE TO EMULATE
 SEM_1: semaforo PORT MAP(CLK_50 => s_CLK_50, SW => s_SW, HEX0 => s_HEX0, HEX1 => s_HEX1);
 
+-- SET SENSOR HIGH FOR TESTING THE EXIT CONDITION OF STATE 0
+s_SENSOR <= '1';
+
 -- COMPOSE AUX SIGNAL FROM HELPPER SIGNALS
-s_SW    <= (others=>'0'); -- Populate SW with zeros
-s_SW(8) <= s_SENSOR;     -- Set the switch 8 as the car sensor 
+s_SW <= (0 => s_SENSOR, others => '0'); -- Set the switch 8 as the car sensor and populate other bits as zero
 
 -- PROCESS TO GENERATE THE DRIVING CLOCK SIGNAL
 CLK_PROCESS : PROCESS
             BEGIN
                     
-            CLK_GENERATOR : FOR I IN 0 TO 1500000000 LOOP
+            CLK_GENERATOR : FOR I IN 0 TO 20 LOOP
                                 s_CLK_50 <= '1';
                                 wait for 1 ns;
                                 
