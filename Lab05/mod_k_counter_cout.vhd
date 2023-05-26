@@ -17,11 +17,11 @@ entity mod_k_counter_cout is
 end mod_k_counter_cout;
 
 architecture arch of mod_k_counter_cout is
-	constant clk_cycle: integer := integer(50*(n)*1000000);
+	constant clk_cycle: integer := integer(n);
 	signal value : integer := 0;
 	
 	begin
-		process (clock, reset_n)
+		process (clock, reset_n, enable)
 		begin
 		
 			if (reset_n = '0' or enable = '0') then
@@ -30,7 +30,7 @@ architecture arch of mod_k_counter_cout is
 
 			elsif (rising_edge(clock) and enable = '1') then
                 -- Now check the conditions to increment counter value
-                if (value + 1 > clk_cycle) then 
+                if (value >= clk_cycle - 2) then 
                     full_cycle <= '1';
                 else
                     value <= value + 1;
