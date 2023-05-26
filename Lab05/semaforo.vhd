@@ -64,7 +64,7 @@ BEGIN
 		END IF;
 	END PROCESS;
 	
-	LOGIC_PROCESS: PROCESS(s_Sensor, c_state)
+	LOGIC_PROCESS: PROCESS(s_Sensor, c_state, s_Tam, s_Tmax, s_Tmin)
 	BEGIN
 		CASE c_state IS
 			WHEN E0 => -- Vd/Vm
@@ -88,7 +88,7 @@ BEGIN
 				s_TamStart  <= '1';
 				s_TmaxStart <= '0';
 				
-				IF s_Tam = '1' THEN
+				IF s_Tam = '0' THEN
 					n_state <= E1;
 				ELSE
 					n_state <= E2;
@@ -103,7 +103,7 @@ BEGIN
 				s_TamStart  <= '0';
 				s_TmaxStart <= '1';
 				
-				IF s_sensor = '1' and s_Tmax = '1' THEN
+				IF s_sensor = '1' and s_Tmax = '0' THEN
 					n_state <= E2;
 				ELSE
 					n_state <= E3;
@@ -117,7 +117,7 @@ BEGIN
 				s_TamStart  <= '1';
 				s_TmaxStart <= '0';
 				
-				IF s_Tam = '1' THEN
+				IF s_Tam = '0' THEN
 					n_state <= E3;
 				ELSE
 					n_state <= E0;
