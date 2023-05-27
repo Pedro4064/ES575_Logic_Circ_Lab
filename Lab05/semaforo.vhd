@@ -74,10 +74,10 @@ BEGIN
 				s_TamStart <= '0';
 				s_TmaxStart <= '0';
 				
-				IF s_Sensor = '0' or s_Tmin = '0' THEN
-					n_state <= E0;
-				ELSE
+				IF s_Sensor = '1' and s_Tmin = '1' THEN
 					n_state <= E1;
+				ELSE
+					n_state <= E0;
 				END IF;
 			
 			
